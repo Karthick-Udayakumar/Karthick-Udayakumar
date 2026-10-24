@@ -2,7 +2,7 @@
 
 # Karthick Udayakumar
 
-### Gen AI / LLM Engineer · SDET Manager · AI Test Automation Architect
+### Gen AI / LLM Engineer · SDET Manager · Gen AI Architect
 
 15 years in quality engineering, now building **production LLM agents** for software delivery teams.
 Chennai, India · Open to Gen AI / LLM Engineering and SDET Leadership roles
