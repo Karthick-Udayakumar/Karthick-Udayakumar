@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="260" viewBox="0 0 720 260">
+  <style>
+    .card { fill: #0d1117; stroke: #30363d; }
+    .title { font: 600 18px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #58a6ff; }
+    .section { font: 600 13px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #8b949e; }
+    .label { font: 14px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #c9d1d9; }
+    .value { font: 600 14px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .bar { fill: #238636; }
+  </style>
+  <rect x="0.5" y="0.5" width="719" height="259" rx="8" class="card"/>
+  <text x="30" y="36" class="title">Karthick-Udayakumar - GitHub metrics</text>
+  <text x="30" y="56" class="section">OVERVIEW</text>
+  <text x="380" y="56" class="section">TOP LANGUAGES (by repos)</text>
+    <text x="30" y="70" class="label">Public repositories</text>
+  <text x="290" y="70" class="value">8</text>
+  <text x="30" y="100" class="label">Total stars</text>
+  <text x="290" y="100" class="value">0</text>
+  <text x="30" y="130" class="label">Followers</text>
+  <text x="290" y="130" class="value">0</text>
+  <text x="30" y="160" class="label">Commits (last year)</text>
+  <text x="290" y="160" class="value">84</text>
+  <text x="30" y="190" class="label">Pull requests (last year)</text>
+  <text x="290" y="190" class="value">9</text>
+  <text x="30" y="220" class="label">Issues (last year)</text>
+  <text x="290" y="220" class="value">0</text>
+    <text x="380" y="70" class="label">Python</text>
+  <rect x="500" y="58" width="180" height="12" rx="3" class="bar"/>
+  <text x="685" y="70" class="value">3</text>
+  <text x="380" y="100" class="label">Java</text>
+  <rect x="500" y="88" width="60" height="12" rx="3" class="bar"/>
+  <text x="565" y="100" class="value">1</text>
+  <text x="380" y="130" class="label">HTML</text>
+  <rect x="500" y="118" width="60" height="12" rx="3" class="bar"/>
+  <text x="565" y="130" class="value">1</text>
+  <text x="380" y="160" class="label">JavaScript</text>
+  <rect x="500" y="148" width="60" height="12" rx="3" class="bar"/>
+  <text x="565" y="160" class="value">1</text>
+  <text x="380" y="190" class="label">TypeScript</text>
+  <rect x="500" y="178" width="60" height="12" rx="3" class="bar"/>
+  <text x="565" y="190" class="value">1</text>
+</svg>

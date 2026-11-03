@@ -98,7 +98,6 @@ Chennai, India · Open to Gen AI / LLM Engineering and SDET Leadership roles
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Karthick-Udayakumar&show_icons=true&theme=tokyonight&hide_border=true&v=3" alt="GitHub stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Karthick-Udayakumar&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&v=3" alt="Top languages" />
+<img src="./github-metrics.svg" alt="GitHub metrics" />
 
 </div>
