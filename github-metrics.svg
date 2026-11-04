@@ -14,7 +14,7 @@
     <text x="30" y="74" class="label">Total stars</text>
   <text x="250" y="74" class="value" text-anchor="end">0</text>
   <text x="30" y="96" class="label">Total commits (last year)</text>
-  <text x="250" y="96" class="value" text-anchor="end">85</text>
+  <text x="250" y="96" class="value" text-anchor="end">88</text>
   <text x="30" y="118" class="label">Total PRs (last year)</text>
   <text x="250" y="118" class="value" text-anchor="end">9</text>
   <text x="30" y="140" class="label">Total issues (last year)</text>
@@ -31,16 +31,16 @@
   <text x="250" y="250" class="value" text-anchor="end">4</text>
     <text x="380" y="74" class="label">Python</text>
   <rect x="500" y="63" width="200" height="11" rx="3" class="bar"/>
-  <text x="710" y="74" class="value" text-anchor="end">31.8%</text>
+  <text x="710" y="74" class="value" text-anchor="end">31.5%</text>
   <text x="380" y="104" class="label">TypeScript</text>
   <rect x="500" y="93" width="169" height="11" rx="3" class="bar"/>
-  <text x="710" y="104" class="value" text-anchor="end">27.0%</text>
+  <text x="710" y="104" class="value" text-anchor="end">26.7%</text>
   <text x="380" y="134" class="label">HTML</text>
   <rect x="500" y="123" width="151" height="11" rx="3" class="bar"/>
-  <text x="710" y="134" class="value" text-anchor="end">24.1%</text>
+  <text x="710" y="134" class="value" text-anchor="end">23.9%</text>
   <text x="380" y="164" class="label">JavaScript</text>
-  <rect x="500" y="153" width="58" height="11" rx="3" class="bar"/>
-  <text x="710" y="164" class="value" text-anchor="end">9.4%</text>
+  <rect x="500" y="153" width="64" height="11" rx="3" class="bar"/>
+  <text x="710" y="164" class="value" text-anchor="end">10.2%</text>
   <text x="380" y="194" class="label">CSS</text>
   <rect x="500" y="183" width="31" height="11" rx="3" class="bar"/>
   <text x="710" y="194" class="value" text-anchor="end">5.0%</text>
