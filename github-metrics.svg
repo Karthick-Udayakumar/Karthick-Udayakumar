@@ -14,7 +14,7 @@
     <text x="30" y="74" class="label">Total stars</text>
   <text x="250" y="74" class="value" text-anchor="end">0</text>
   <text x="30" y="96" class="label">Total commits (last year)</text>
-  <text x="250" y="96" class="value" text-anchor="end">88</text>
+  <text x="250" y="96" class="value" text-anchor="end">89</text>
   <text x="30" y="118" class="label">Total PRs (last year)</text>
   <text x="250" y="118" class="value" text-anchor="end">9</text>
   <text x="30" y="140" class="label">Total issues (last year)</text>
@@ -26,12 +26,12 @@
   <text x="30" y="206" class="label">Followers</text>
   <text x="250" y="206" class="value" text-anchor="end">0</text>
   <text x="30" y="228" class="label">Current streak (days)</text>
-  <text x="250" y="228" class="value" text-anchor="end">0</text>
+  <text x="250" y="228" class="value" text-anchor="end">1</text>
   <text x="30" y="250" class="label">Longest streak (days)</text>
   <text x="250" y="250" class="value" text-anchor="end">4</text>
     <text x="380" y="74" class="label">Python</text>
-  <rect x="500" y="63" width="200" height="11" rx="3" class="bar"/>
-  <text x="710" y="74" class="value" text-anchor="end">31.5%</text>
+  <rect x="500" y="63" width="199" height="11" rx="3" class="bar"/>
+  <text x="710" y="74" class="value" text-anchor="end">31.4%</text>
   <text x="380" y="104" class="label">TypeScript</text>
   <rect x="500" y="93" width="169" height="11" rx="3" class="bar"/>
   <text x="710" y="104" class="value" text-anchor="end">26.7%</text>
@@ -39,8 +39,8 @@
   <rect x="500" y="123" width="151" height="11" rx="3" class="bar"/>
   <text x="710" y="134" class="value" text-anchor="end">23.9%</text>
   <text x="380" y="164" class="label">JavaScript</text>
-  <rect x="500" y="153" width="64" height="11" rx="3" class="bar"/>
-  <text x="710" y="164" class="value" text-anchor="end">10.2%</text>
+  <rect x="500" y="153" width="65" height="11" rx="3" class="bar"/>
+  <text x="710" y="164" class="value" text-anchor="end">10.4%</text>
   <text x="380" y="194" class="label">CSS</text>
   <rect x="500" y="183" width="31" height="11" rx="3" class="bar"/>
   <text x="710" y="194" class="value" text-anchor="end">5.0%</text>
