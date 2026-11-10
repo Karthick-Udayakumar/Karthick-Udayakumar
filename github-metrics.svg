@@ -26,7 +26,7 @@
   <text x="30" y="206" class="label">Followers</text>
   <text x="250" y="206" class="value" text-anchor="end">0</text>
   <text x="30" y="228" class="label">Current streak (days)</text>
-  <text x="250" y="228" class="value" text-anchor="end">1</text>
+  <text x="250" y="228" class="value" text-anchor="end">0</text>
   <text x="30" y="250" class="label">Longest streak (days)</text>
   <text x="250" y="250" class="value" text-anchor="end">4</text>
     <text x="380" y="74" class="label">Python</text>
