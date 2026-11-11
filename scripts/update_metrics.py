@@ -87,6 +87,18 @@ def streaks(days):
     return current_run, longest
 
 
+LANGUAGE_COLORS = {
+    "Python": "#3572A5",
+    "TypeScript": "#3178C6",
+    "JavaScript": "#F1E05A",
+    "HTML": "#E34C26",
+    "CSS": "#563D7C",
+    "Java": "#B07219",
+    "Shell": "#89E051",
+}
+FONT = "-apple-system, Segoe UI, Helvetica, Arial, sans-serif"
+
+
 def build_svg(user):
     repos = user["repositories"]["nodes"]
     contributions = user["contributionsCollection"]
@@ -94,9 +106,9 @@ def build_svg(user):
     current_streak, longest_streak = streaks(days)
     stats = [
         ("Total stars", sum(r["stargazerCount"] for r in repos)),
-        ("Total commits (last year)", contributions["totalCommitContributions"]),
-        ("Total PRs (last year)", contributions["totalPullRequestContributions"]),
-        ("Total issues (last year)", contributions["totalIssueContributions"]),
+        ("Commits (last year)", contributions["totalCommitContributions"]),
+        ("Pull requests (last year)", contributions["totalPullRequestContributions"]),
+        ("Issues (last year)", contributions["totalIssueContributions"]),
         ("Contributed to (last year)", contributions["totalRepositoriesWithContributedCommits"]),
         ("Public repositories", user["repositories"]["totalCount"]),
         ("Followers", user["followers"]["totalCount"]),
@@ -107,38 +119,52 @@ def build_svg(user):
     languages = language_bytes(repos)
     total_bytes = sum(languages.values()) or 1
     top_languages = languages.most_common(6)
+    largest = top_languages[0][1] if top_languages else 1
+
+    row_pitch = 36
+    first_row = 146
+    height = first_row + (len(stats) - 1) * row_pitch + 52
 
     rows = []
     for index, (label, value) in enumerate(stats):
-        y = 74 + index * 22
-        rows.append(f'<text x="30" y="{y}" class="label">{html.escape(label)}</text>')
-        rows.append(f'<text x="250" y="{y}" class="value" text-anchor="end">{value:,}</text>')
+        y = first_row + index * row_pitch
+        rows.append(f'<text x="40" y="{y}" class="label">{html.escape(label)}</text>')
+        rows.append(f'<text x="330" y="{y}" class="value" text-anchor="end">{value:,}</text>')
+        if index < len(stats) - 1:
+            rows.append(f'<line x1="40" x2="330" y1="{y + 14}" y2="{y + 14}" class="rule"/>')
 
     bars = []
     for index, (name, size) in enumerate(top_languages):
-        y = 74 + index * 30
-        percent = 100 * size / total_bytes
-        width = int(200 * size / total_bytes / (top_languages[0][1] / total_bytes))
-        bars.append(f'<text x="380" y="{y}" class="label">{html.escape(name)}</text>')
-        bars.append(f'<rect x="500" y="{y - 11}" width="{width}" height="11" rx="3" class="bar"/>')
-        bars.append(f'<text x="710" y="{y}" class="value" text-anchor="end">{percent:.1f}%</text>')
+        y = first_row + index * row_pitch
+        color = LANGUAGE_COLORS.get(name, "#58A6FF")
+        bar_width = max(4, int(130 * size / largest))
+        bars.append(f'<circle cx="396" cy="{y - 5}" r="5" fill="{color}"/>')
+        bars.append(f'<text x="410" y="{y}" class="label">{html.escape(name)}</text>')
+        bars.append(f'<rect x="530" y="{y - 11}" width="{bar_width}" height="10" rx="5" fill="{color}"/>')
+        bars.append(f'<text x="722" y="{y}" class="value" text-anchor="end">{100 * size / total_bytes:.1f}%</text>')
 
-    height = 74 + 9 * 22 + 20
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="720" height="{height}" viewBox="0 0 720 {height}">
+    name = html.escape(user.get("name") or LOGIN)
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="760" height="{height}" viewBox="0 0 760 {height}">
   <style>
     .card {{ fill: #0d1117; stroke: #30363d; }}
-    .title {{ font: 600 18px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #58a6ff; }}
-    .section {{ font: 600 13px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #8b949e; }}
-    .label {{ font: 14px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #c9d1d9; }}
-    .value {{ font: 600 14px -apple-system, Segoe UI, Helvetica, Arial, sans-serif; fill: #f0f6fc; }}
-    .bar {{ fill: #238636; }}
+    .title {{ font: 700 20px {FONT}; fill: #f0f6fc; }}
+    .subtitle {{ font: 400 13px {FONT}; fill: #8b949e; }}
+    .section {{ font: 600 12px {FONT}; fill: #58a6ff; letter-spacing: 1px; }}
+    .label {{ font: 400 14px {FONT}; fill: #c9d1d9; }}
+    .value {{ font: 600 14px {FONT}; fill: #f0f6fc; }}
+    .rule {{ stroke: #21262d; stroke-width: 1; }}
+    .divider {{ stroke: #30363d; stroke-width: 1; }}
+    .footer {{ font: 400 11px {FONT}; fill: #6e7681; }}
   </style>
-  <rect x="0.5" y="0.5" width="719" height="{height - 1}" rx="8" class="card"/>
-  <text x="30" y="36" class="title">{html.escape(user.get("name") or LOGIN)} - GitHub stats</text>
-  <text x="30" y="56" class="section">OVERVIEW</text>
-  <text x="380" y="56" class="section">TOP LANGUAGES (by code size)</text>
+  <rect x="0.5" y="0.5" width="759" height="{height - 1}" rx="10" class="card"/>
+  <text x="40" y="46" class="title">{name}</text>
+  <text x="40" y="68" class="subtitle">@{html.escape(LOGIN)} · AI &amp; QA engineering</text>
+  <text x="40" y="106" class="section">OVERVIEW</text>
+  <text x="396" y="106" class="section">TOP LANGUAGES BY CODE SIZE</text>
+  <line x1="360" x2="360" y1="90" y2="{height - 40}" class="divider"/>
   {chr(10).join("  " + row for row in rows)}
   {chr(10).join("  " + bar for bar in bars)}
+  <text x="40" y="{height - 18}" class="footer">Updated daily from the GitHub API</text>
 </svg>
 """
 
