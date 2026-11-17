@@ -38,7 +38,7 @@
   <text x="330" y="362" class="value" text-anchor="end">0</text>
   <line x1="40" x2="330" y1="376" y2="376" class="rule"/>
   <text x="40" y="398" class="label">Current streak (days)</text>
-  <text x="330" y="398" class="value" text-anchor="end">2</text>
+  <text x="330" y="398" class="value" text-anchor="end">0</text>
   <line x1="40" x2="330" y1="412" y2="412" class="rule"/>
   <text x="40" y="434" class="label">Longest streak (days)</text>
   <text x="330" y="434" class="value" text-anchor="end">4</text>
